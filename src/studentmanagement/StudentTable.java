@@ -112,6 +112,7 @@ public class StudentTable extends JFrame implements ActionListener{
         addBtn.addActionListener(this);
         clearBtn.addActionListener(this);
         delBtn.addActionListener(this);
+        updatedBtn.addActionListener(this);
         
         table.addMouseListener(new MouseAdapter(){
             public void mouseClicked(MouseEvent e){
