@@ -46,7 +46,7 @@ public class StudentTable extends JFrame implements ActionListener{
         
         c = this.getContentPane();
         c.setLayout(null);
-        c.setBackground(Color.PINK);
+        c.setBackground(Color.ORANGE);
         
         titleLabel = new JLabel("Student Registration Form");
         titleLabel.setBounds(170, 10, 450, 50);
