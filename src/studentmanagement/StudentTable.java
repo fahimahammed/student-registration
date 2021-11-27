@@ -21,6 +21,7 @@ import javax.swing.table.DefaultTableModel;
  * @author Fahim
  */
 public class StudentTable extends JFrame implements ActionListener{
+    
     private JTable table;
     private JScrollPane scroll;
     private DefaultTableModel model;
@@ -101,7 +102,7 @@ public class StudentTable extends JFrame implements ActionListener{
         model = new DefaultTableModel();
         model.setColumnIdentifiers(col);
         table.setModel(model);
-        table.setSelectionBackground(Color.darkGray);
+        table.setSelectionBackground(Color.YELLOW);
         table.setBackground(Color.WHITE);
         table.setRowHeight(30);
         
@@ -135,6 +136,7 @@ public class StudentTable extends JFrame implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent event) {
         if(event.getSource()==addBtn){
+            
             rows[0] = fnText.getText();
             rows[1] = lnText.getText();
             rows[2] = ageText.getText();
@@ -143,6 +145,7 @@ public class StudentTable extends JFrame implements ActionListener{
             
         }
         else if(event.getSource()==clearBtn){
+            
             fnText.setText("");
             lnText.setText("");
             ageText.setText("");
