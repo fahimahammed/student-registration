@@ -3,6 +3,7 @@ package studentmanagement;
 
 import java.awt.Color;
 import java.awt.Container;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -29,6 +30,7 @@ public class StudentTable extends JFrame implements ActionListener{
     private JLabel titleLabel, fnLabel, lnLabel, ageLabel, resultLabel, abc;
     private JTextField fnText, lnText, ageText, resultText;
     private JButton addBtn, delBtn, updatedBtn, clearBtn;
+    private Font font;
     
     private String[] col = {"First Name", "Last Name", "Age", "Result"};
     private String[] rows = new String[4];
@@ -47,7 +49,9 @@ public class StudentTable extends JFrame implements ActionListener{
         c.setBackground(Color.PINK);
         
         titleLabel = new JLabel("Student Registration Form");
-        titleLabel.setBounds(140, 10, 250, 50);
+        titleLabel.setBounds(170, 10, 450, 50);
+        font = new Font("Calibri", Font.BOLD,  40);
+        titleLabel.setFont(font);
         c.add(titleLabel);
         
         fnLabel = new JLabel("First Name: ");
@@ -104,6 +108,8 @@ public class StudentTable extends JFrame implements ActionListener{
         table.setModel(model);
         table.setSelectionBackground(Color.YELLOW);
         table.setBackground(Color.WHITE);
+        font = new Font("SansSerif", Font.BOLD,  12);
+        table.setFont(font);
         table.setRowHeight(30);
         
         scroll = new JScrollPane(table);
