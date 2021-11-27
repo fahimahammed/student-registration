@@ -5,9 +5,12 @@ import java.awt.Color;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
@@ -107,8 +110,25 @@ public class StudentTable extends JFrame implements ActionListener{
         c.add(scroll);
         
         addBtn.addActionListener(this);
-        
         clearBtn.addActionListener(this);
+        delBtn.addActionListener(this);
+        
+        table.addMouseListener(new MouseAdapter(){
+            public void mouseClicked(MouseEvent e){
+                int rowNum = table.getSelectedRow();
+                
+                String fName = model.getValueAt(rowNum, 0).toString();
+                String lName = model.getValueAt(rowNum, 1).toString();
+                String age = model.getValueAt(rowNum, 2).toString();
+                String result = model.getValueAt(rowNum, 3).toString();
+                
+                fnText.setText(fName);
+                lnText.setText(lName);
+                ageText.setText(age);
+                resultText.setText(result);
+            }
+        });
+        
     }
     
     @Override
@@ -126,6 +146,15 @@ public class StudentTable extends JFrame implements ActionListener{
             lnText.setText("");
             ageText.setText("");
             resultText.setText("");
+        }
+        else if(event.getSource()==delBtn){
+            int rowNum = table.getSelectedRow();
+            if(rowNum >= 0){
+                model.removeRow(rowNum);
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Please selct a row");
+            }
         }
     }
     
