@@ -40,13 +40,13 @@ public class StudentTable extends JFrame implements ActionListener{
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(800, 690);
         this.setLocationRelativeTo(null);
-        this.setTitle("Student Management");
+        this.setTitle("Student Registration Form");
         
         c = this.getContentPane();
         c.setLayout(null);
         c.setBackground(Color.PINK);
         
-        titleLabel = new JLabel("Student Management");
+        titleLabel = new JLabel("Student Registration Form");
         titleLabel.setBounds(140, 10, 250, 50);
         c.add(titleLabel);
         
