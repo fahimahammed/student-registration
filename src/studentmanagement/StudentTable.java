@@ -157,6 +157,18 @@ public class StudentTable extends JFrame implements ActionListener{
                 JOptionPane.showMessageDialog(null, "Please selct a row");
             }
         }
+        else if(event.getSource()==updatedBtn){
+            int numRow = table.getSelectedRow();
+            String fName = fnText.getText();
+            String lName = lnText.getText();
+            String age = ageText.getText();
+            String result = resultText.getText();
+            
+            model.setValueAt(fName, numRow, 0);
+            model.setValueAt(lName, numRow, 1);
+            model.setValueAt(age, numRow, 2);
+            model.setValueAt(result, numRow, 3);
+        }
     }
     
     public static void main(String[] args) {
