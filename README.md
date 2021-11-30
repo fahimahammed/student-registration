@@ -1,4 +1,4 @@
-# Student Registration Form
+# Student Registration Form using java swing
 
 It is a java swing simple student registration project.
 
